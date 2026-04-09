@@ -2,7 +2,6 @@
 PriceShield v2 — auth.py
 JWT creation, verification, and FastAPI dependency injection.
 """
-from __future__ import annotations
 import time
 from typing import Optional
 
