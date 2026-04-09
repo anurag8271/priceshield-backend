@@ -62,6 +62,12 @@ class Settings(BaseSettings):
     # ── Sentry ────────────────────────────────────────────
     SENTRY_DSN:     str  = ""
 
+    # ── FIXED: Moved these INSIDE the Settings class ──
+    AMAZON_ACCESS_KEY:   str = ""
+    AMAZON_SECRET_KEY:   str = ""
+    AMAZON_PARTNER_TAG:  str = ""
+    RAPIDAPI_KEY:        str = ""
+
     class Config:
         env_file = ".env"
         env_file_encoding = "utf-8"
@@ -144,11 +150,3 @@ STORE_SELECTORS = {
         "wait_for":     ".price",
     },
 }
-
-# ── Amazon PA-API 5.0 (added in v2 real-data edition) ──────
-AMAZON_ACCESS_KEY:   str = ""
-AMAZON_SECRET_KEY:   str = ""
-AMAZON_PARTNER_TAG:  str = ""   # e.g. "safebuy-21"
-
-# ── RapidAPI (fallback when PA-API not available) ───────────
-RAPIDAPI_KEY:        str = ""   # from rapidapi.com dashboard
